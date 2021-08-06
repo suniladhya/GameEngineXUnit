@@ -7,13 +7,20 @@ using Xunit;
 
 namespace GameEngine.Tests
 {
-    public class BossEnemyShould
+    public class BossEnemyShould : IDisposable
     {
         private readonly BossEnemy _sut;
         public BossEnemyShould()
         {
             _sut = new();
         }
+
+        public void Dispose()
+        {
+            //Will contain the code for clean up
+            //_sut.Dispose();
+        }
+
         [Fact]
         [Trait("Category", "Enemy")]
         public void HaveCorrectPower()
