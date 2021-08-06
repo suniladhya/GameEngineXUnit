@@ -9,12 +9,17 @@ namespace GameEngine.Tests
 {
     public class BossEnemyShould
     {
+        private readonly BossEnemy _sut;
+        public BossEnemyShould()
+        {
+            _sut = new();
+        }
         [Fact]
         [Trait("Category", "Enemy")]
         public void HaveCorrectPower()
         {
-            BossEnemy sut = new();
-            Assert.Equal(166.667, sut.TotalSpecialAttackPower, 3);
+            //BossEnemy sut = new();
+            Assert.Equal(166.667, _sut.TotalSpecialAttackPower, 3);
         }
 
         
