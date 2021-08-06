@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace GameEngine.Tests
 {
@@ -12,13 +13,18 @@ namespace GameEngine.Tests
     /// </summary>
     public class EnemyFactoryShould
     {
+        private readonly ITestOutputHelper _output;
+        public EnemyFactoryShould(ITestOutputHelper output)
+        {
+            _output = output;
+        }
         [Fact]
         [Trait("Category", "Enemy")]
         public void CreateNormalEnemyByDefault()
         {
             EnemyFactory sut = new EnemyFactory();
             Enemy enemy = sut.Create("Zombie");
-
+            _output.WriteLine("Zombie Enemy Created!..");
             Assert.IsType<NormalEnemy>(enemy);
         }
         [Fact]
