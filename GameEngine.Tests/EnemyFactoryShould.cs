@@ -13,6 +13,7 @@ namespace GameEngine.Tests
     public class EnemyFactoryShould
     {
         [Fact]
+        [Trait("Category", "Enemy")]
         public void CreateNormalEnemyByDefault()
         {
             EnemyFactory sut = new EnemyFactory();
